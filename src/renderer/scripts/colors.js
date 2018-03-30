@@ -19,12 +19,6 @@ const colors = [
   '#758a99'   // group ten's color
 ]
 
-
-/* export function setPath() {
-  path = dialog.showOpenDialog();
-  console.log(path);
-} */
-
 function setRegions() {
 
   let fileData = fs.readFileSync(global.path[0], "utf8").split("\n");
@@ -38,14 +32,10 @@ function setRegions() {
 }
 
 function setRegionColors(id) {
-  var blockId = "block" + id;
-  var block = document.getElementById(blockId);
+  let blockId = "block" + id;
+  let block = document.getElementById(blockId);
   block.style.fill = colors[regions[id - 1][2]]
 }
-
-// setRegions();
-// path = ['/run/media/andy/Data/Electron Projects/StoreLand.dat']
-
 
 export function watchFileChanges() {
   fs.watchFile(global.path[0], (curr, prev) => {
@@ -61,18 +51,3 @@ export function watchFileChanges() {
     }  
   })
 }
-
-/* var interval = setInterval(function() {
-  (function() {
-    try {
-      setRegions();
-    } catch (err) {
-      console.log(err);
-      return;
-    }
-    for (let i = 1; i <= 45; i++) {
-      setRegionColors(i);
-    }
-  })()
-}, 5000)
- */
