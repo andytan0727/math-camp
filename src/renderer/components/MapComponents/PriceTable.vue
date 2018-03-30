@@ -81,15 +81,12 @@ export default {
     // waiting for user opne a file to read
     let intv = setInterval(function() {
       if (!global.path) {
-        console.log('global path is not defined')
         return;
       } else {
         clearInterval(intv)
         if (!priceTabObj.path) {
           priceTabObj.path = global.path[0];
         }
-
-        console.log('global path is defined')
 
         fs.watchFile(priceTabObj.path, (curr, prev) => {
           let fileData = fs.readFileSync(priceTabObj.path, "utf8").split("\n");
@@ -104,8 +101,6 @@ export default {
     }, 5000)
   }
 }
-
-
 </script>
 
 
