@@ -1,9 +1,13 @@
 {
   "name": "math-camp",
   "version": "1.0.0",
-  "author": "andytan <andytan0727@gmail.com>",
+  "author": "Andy Tan <andytan0727@gmail.com>",
   "description": "Map manipulating project for Math Camp UUM 2018",
   "license": "GPL-3.0",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/andytan0727/math-camp.git"
+  },
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
